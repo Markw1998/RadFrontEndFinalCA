@@ -1,0 +1,71 @@
+<br />
+<br />
+<br />
+<br />
+<br />
+<div *ngIf="Games" class="container">
+  <div *ngFor="let game of Games; let i = index" class="row">
+    <div class="card bg-dark" style="width: 100%; margin: 10px;">
+      <div class="col card-header text-center">
+        <h4 style="color: White;">
+          {{ game.GameName }}
+        </h4>
+      </div>
+      <div class="col">
+        <div [ngbCollapse]="!isCollapsed[i]">
+          <p style="color: white;">{{ game.GameDesc }}</p>
+        </div>
+        <div class="card-footer bg-transparent border-danger text-center">
+          <button
+            type="button"
+            class="btn btn-outline-danger btn-sm"
+            (click)="isCollapsed[i] = !isCollapsed[i]"
+          >
+            View Summary
+          </button>
+          <button
+            type="button"
+            style="margin-left: 10px;"
+            class="btn btn-outline-danger btn-sm"
+            (click)="DeleteFavGame(i)"
+          >
+            Unfavourite
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- <div class="row align-items-center">
+  <div class="col-sm-4" *ngFor="let game of Games; let i = index">
+    <div class="card text-white bg-dark mb-3" style="width: 18rem;">
+      <div class="card-body">
+        <h5 class="card-title">{{ game.GameName }}</h5>
+      </div>
+      <div [ngbCollapse]="!isCollapsed[i]">
+        <p class="card-text">
+          {{ game.GameDesc }}
+        </p>
+        <br />
+      </div>
+      <div class="card-footer bg-transparent border-danger">
+        <button
+          type="button"
+          class="btn btn-outline-danger btn-sm"
+          (click)="isCollapsed[i] = !isCollapsed[i]"
+        >
+          View Summary
+        </button>
+        <button
+          type="button"
+          style="margin-left: 10px;"
+          class="btn btn-outline-danger btn-sm"
+          (click)="DeleteFavGame(i)"
+        >
+          UnFavourite
+        </button>
+      </div>
+    </div>
+  </div>
+</div> -->
+</div>

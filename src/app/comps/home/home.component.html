@@ -1,0 +1,67 @@
+<html>
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-12 col-md-10 col-lg-8">
+        <form class="card card-sm rounded" style="background-color: #343a40;">
+          <div class="card-body row no-gutters align-items-center">
+            <div class="col-auto">
+              <i class="fas fa-search h4 text-body"></i>
+            </div>
+            <div class="col">
+              <input
+                class="form-control form-control-lg form-control-borderless"
+                type="search"
+                placeholder="Search for a game..."
+                #input
+              />
+            </div>
+            <div class="col-auto">
+              <button
+                class="btn btn-outline-danger btn-lg"
+                type="button"
+                (click)="Testing(input.value)"
+                style="margin-left: 5px;"
+              >
+                Search
+              </button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <div *ngIf="Games" class="container">
+    <div *ngFor="let game of Games; let i = index" class="row">
+      <div class="card bg-dark" style="width: 100%; margin: 10px;">
+        <div class="col card-header text-center">
+          <h4 style="color: White;">
+            {{ game.name }}
+          </h4>
+        </div>
+        <div class="col">
+          <div [ngbCollapse]="!isCollapsed[i]">
+            <p style="color: white;">{{ game.summary }}</p>
+          </div>
+          <div class="card-footer bg-transparent border-danger text-center">
+            <button
+              type="button"
+              class="btn btn-outline-danger btn-sm"
+              (click)="isCollapsed[i] = !isCollapsed[i]"
+            >
+              View Summary
+            </button>
+            <button
+              type="button"
+              style="margin-left: 10px;"
+              class="btn btn-outline-danger btn-sm"
+              (click)="AddToFav(i)"
+            >
+              Favourite
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</html>
