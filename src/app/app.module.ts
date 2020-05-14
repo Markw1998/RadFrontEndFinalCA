@@ -12,6 +12,7 @@ import { AngularFontAwesomeModule } from "angular-font-awesome";
 import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { FavouritesComponent } from "./comps/favourites/favourites.component";
 import { AuthguardService } from "./services/authguard.service";
+import { RegisterComponent } from './comps/register/register.component';
 
 @NgModule({
   declarations: [
@@ -20,6 +21,7 @@ import { AuthguardService } from "./services/authguard.service";
     NavbarComponent,
     LoginComponent,
     FavouritesComponent,
+    RegisterComponent,
   ],
   imports: [
     BrowserModule,

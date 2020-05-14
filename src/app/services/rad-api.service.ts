@@ -71,4 +71,17 @@ export class RadApiService {
       .subscribe((res) => console.log(res));
     console.log(game);
   }
+
+  public Register(credentials: FormGroup) {
+    const body = {
+      Email: credentials.get("email").value,
+      Password: credentials.get("password").value,
+      ConfirmPassword: credentials.get("password").value,
+    };
+    this._http
+      .post(this.url + "/api/account/register", body, {
+        headers: new HttpHeaders().set("Content-Type", "application/json"),
+      })
+      .subscribe((r) => console.log(r));
+  }
 }

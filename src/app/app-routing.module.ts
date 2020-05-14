@@ -4,11 +4,13 @@ import { HomeComponent } from "./comps/home/home.component";
 import { LoginComponent } from "./comps/login/login.component";
 import { FavouritesComponent } from "./comps/favourites/favourites.component";
 import { AuthguardService } from "./services/authguard.service";
+import { RegisterComponent } from "./comps/register/register.component";
 
 const routes: Routes = [
   { path: "", pathMatch: "full", redirectTo: "login" },
   { path: "home", component: HomeComponent, canActivate: [AuthguardService] },
   { path: "login", component: LoginComponent },
+  { path: "register", component: RegisterComponent },
   {
     path: "favourites",
     component: FavouritesComponent,

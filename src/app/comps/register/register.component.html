@@ -3,7 +3,7 @@
     <div class="col-sm-9 col-md-7 col-lg-5 mx-auto">
       <div class="card card-signin my-5" style="background-color: #343a40;">
         <div class="card-body">
-          <h5 class="card-title text-center" style="color: white;">Sign In</h5>
+          <h5 class="card-title text-center" style="color: white;">Register</h5>
           <form [formGroup]="credentialsForm" class="form-signin">
             <div class="form-label-group">
               <label for="inputEmail" style="color: white;"
@@ -35,14 +35,7 @@
             <button
               class="btn btn-lg btn-danger btn-block text-uppercase"
               type="submit"
-              (click)="Login()"
-            >
-              Sign in
-            </button>
-            <button
-              class="btn btn-lg btn-danger btn-block text-uppercase"
-              type="submit"
-              (click)="router.navigate(['register'])"
+              (click)="Register()"
             >
               Register
             </button>
